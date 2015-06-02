@@ -1,0 +1,20 @@
+  <% if @beer.errors.any? %>
+      <div id="pure-form pure-form-aligned user_form">
+        <p><%= pluralize(@beer.errors.count, "error") %> prohibited this user from being saved:</p>
+        <ul>
+        <% @beer.errors.full_messages.each do |message| %>
+          <li style="color: red"><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+  <% end %>
+<%= form_for(@beer, html: {class: 'pure-form'}) do |f| %>
+
+
+
+
+    <%= f.text_field :name, placeholder: 'Name' %><br>
+    <%= f.text_field :description, placeholder: 'Description' %><br>
+    <%= f.text_field :brewery, placeholder: 'Brewery' %><br>
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,104 @@
+$font: PT Sans Narrow, sans-serif;
+$primary-color: #34495e;
+$secondary-color: #BF9F3F;
+$tertiary-color: #20788C;
+
+
+@mixin box-shadow {
+  -webkit-box-shadow: 4px 8px 33px -5px rgba(0,0,0,0.82);
+  -moz-box-shadow: 4px 8px 33px -5px rgba(0,0,0,0.82);
+  box-shadow: 4px 8px 33px -5px rgba(0,0,0,0.82);
+}
+
+@mixin border-radius($roundness){
+  -webkit-border-radius: $roundness;
+     -moz-border-radius: $roundness;
+      -ms-border-radius: $roundness;
+          border-radius: $roundness;
+}
+
+body{
+  margin: 0;
+  font-family: $font;
+  color: $primary-color;
+}
+
+
+nav{
+  height: 50px;
+  background: $tertiary-color;
+
+    ul{
+      margin: 0 10px;
+      padding: 0;
+      list-style: none;
+
+      li{
+        margin-top: 15px;
+        display: inline-block;
+
+        a{
+          padding: 6px 12px;
+          text-decoration: none;
+          color: $primary-color;
+          background: $secondary-color;
+          @include border-radius(5px)
+        }
+
+      }
+    }
+}
+
+
+
+.new{
+  background: $primary-color;
+  color: $tertiary-color;
+}
+
+.delete{
+  @extend .new;
+  font-size: 4em;
+}
+
+
+.container{
+  width: 100%;
+}
+
+.nav-links{
+  float: left;
+  width: 5 / 6 * 100%;
+}
+
+.new-beer{
+  float: right;
+  width: 1 / 6 * 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin box-shadow {
+  -webkit-box-shadow: 4px 8px 33px -5px rgba(0,0,0,0.82);
+  -moz-box-shadow: 4px 8px 33px -5px rgba(0,0,0,0.82);
+  box-shadow: 4px 8px 33px -5px rgba(0,0,0,0.82);
+}
+
+@mixin border-radius($roundness){
+  -webkit-border-radius: $roundness;
+     -moz-border-radius: $roundness;
+      -ms-border-radius: $roundness;
+          border-radius: $roundness;
+}

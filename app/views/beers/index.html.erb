@@ -1,0 +1,9 @@
+<% @beers.each do |beer| %>
+  <div class="beer-box">
+    <h2><%= link_to beer.name, beer %></h2>
+    <h3><%= beer.brewery %></h3>
+    <p><%= beer.description %></p>
+    <%= link_to "Edit", edit_beer_path(beer.id) %>
+     <%= link_to "Delete", beer, method: :delete, class: 'delete' %>
+  </div>
+<% end %>

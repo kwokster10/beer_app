@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BeerApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<nav>
+  <ul>
+    <div class="container">
+      <div class="nav-links">
+        <% if session[:user_id] %>
+        <li><%= link_to "Home", user_path(session[:user_id]) %></li>
+        <% else %>
+        <li><%= link_to "Home", login_path %></li>
+        <% end %>
+        <li><%= link_to "Beers", beers_path %></li>
+      </div>
+        <% if session[:user_id] %>
+      <div class="new-beer">
+        <li><%= link_to "Make a New Beer", new_beer_path, class: 'new' %></li>
+        <li><%= link_to "Logout", session_path, method: :delete %></li>
+        <% end %>
+      </div>
+    </div>
+  </ul>
+</nav>
+<%= yield %>
+
+</body>
+</html>
